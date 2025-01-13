@@ -4,13 +4,16 @@
   height: 80px;
   align-items: center;
   border-bottom: 1px solid #EAECF0;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
+  // border: 1px solid red;
   
   &__navlinks {
     display: flex;
     align-items: center;
     gap: 40px;
+    padding: 0 32px;
+    // border: 1px solid black;
     .links {
       display: flex;
       gap: 30px;
@@ -27,6 +30,7 @@
     display: flex;
     align-items: center;
     gap: 25px;
+    padding: 0 32px;
     >div{
         font-size: 16px;
         font-family: Inter;

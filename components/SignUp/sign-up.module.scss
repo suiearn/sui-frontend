@@ -1,0 +1,132 @@
+.login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100dvh;
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.1) 0%,
+      rgba(0, 0, 0, 0.1) 100%
+    ),
+    rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4.5px);
+  &__login_container {
+    padding: 32px 24px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    height: fit-content;
+
+    .header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      > h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-top: 10px;
+      }
+      > h4 {
+        font-size: 16px;
+        // margin-top: 5px;
+        color: #667085;
+        font-family: "Inter Tight", serif;
+        > span {
+          color: #2e90fa;
+          font-size: 16px;
+          font-family: "Inter Tight", serif;
+        }
+      }
+    }
+
+    .google_btn {
+      margin-top: 25px;
+      width: 352px;
+      height: 44px;
+      border: 1px solid #d0d5dd;
+      padding: 10px 16px;
+      border-radius: 8px;
+      display: flex; 
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+
+      > p {
+        font-weight: 500;
+        font-family: "Inter Tight", serif;
+        font-size: 16px;
+      }
+    }
+  }
+
+  .main{
+    form{
+        input{
+            width: 352px;
+            height: 44px;
+            border: 1px solid #d0d5dd;
+            padding: 10px 16px;
+            border-radius: 8px;
+            padding-left: 10px;
+            font-size: 16px;
+            font-family: "Inter Tight", serif;
+            margin-top: 20px;
+            color: #667085;
+        }
+
+        .password{
+            width: 100%;
+            position: relative;
+
+            input{
+                width: 100%;
+            }
+
+            .reveal{
+                position: absolute;
+                top: 60%;
+                transform: translateY(0, -50%);
+                right: 4%;
+            }
+        }
+    }
+    .forgot{
+        color: #2E90FA;
+        font-size: 14px;
+        margin-top: 15px;
+        font-weight: 500;
+        cursor: pointer;
+        font-family: "Inter Tight", serif;
+    }
+    .signin_button{
+        color: #ffffff;
+        background-color: #2E90FA;
+        padding: 10px 18px;
+        border-radius: 8px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 16px;
+        margin-top: 25px;
+    }
+    .terms{
+        font-family: "Inter Tight", serif;
+        text-align: center;
+        font-size: 14px;
+        width: 352px;
+        margin-top: 30px;
+        color:#98A2B3;
+        width: 352px;
+        span{
+            font-family: "Inter Tight", serif;
+            font-size: 14px;
+            color: #2E90FA;  
+            cursor: pointer;
+        }
+    }
+  }
+}
