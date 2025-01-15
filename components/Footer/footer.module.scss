@@ -1,0 +1,109 @@
+.footer {
+  border-top: 1px solid #eaecf0;
+  padding-top: 50px;
+  padding-bottom: 40px;
+
+  .footer_upper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 60px;
+
+    .logo {
+      max-width: 384px;
+      > p {
+        font-size: 16px;
+        font-family: "Inter", serif;
+        margin-top: 25px;
+        color: #667085;
+      }
+    }
+
+    .footer_links {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+
+      > div {
+        > h4 {
+          color: #667085;
+          text-transform: uppercase;
+          font-family: "Inter Tight", serif;
+          font-size: 14px;
+          margin-bottom: 15px;
+          font-weight: 500;
+        }
+        > p {
+          color: #000000;
+          font-size: 16px;
+          font-weight: 500;
+          font-family: "Inter", serif;
+          margin-bottom: 10px;
+        }
+      }
+    }
+
+    .footer_email {
+      > h4 {
+        color: #667085;
+        text-transform: uppercase;
+        font-family: "Inter Tight", serif;
+        font-size: 14px;
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+    }
+
+    input {
+      width: 230px;
+      height: 44px;
+      border: 1px solid #d0d5dd;
+      padding: 10px 16px;
+      border-radius: 8px;
+      padding-left: 10px;
+      font-size: 16px;
+      font-family: "Inter", serif;
+      // margin-top: 20px;
+      color: #667085;
+    }
+    .signin_button {
+      color: #ffffff;
+      background-color: #2e90fa;
+      padding: 10px 18px;
+      border-radius: 8px;
+      width: 100%;
+      font-weight: 500;
+      font-size: 16px;
+      font-family: "Inter", serif;
+    }
+  }
+
+  .footer_lower {
+    border-top: 1px solid #eaecf0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .copyright {
+      font-size: 16px;
+      color: #98a2b3;
+      margin-top: 20px;
+      font-family: "Inter", serif;
+    }
+    .terms {
+      margin-top: 20px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      >p{
+        font-family: "Inter", serif;
+        font-size: 16px;
+        color: #98a2b3;
+      }
+    }
+  }
+}
+
+.app_container {
+  padding-left: 132px;
+  padding-right: 132px;
+}
