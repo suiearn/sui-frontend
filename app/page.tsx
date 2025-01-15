@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="app_container mb-20">
+      <div className="app_container mb-28">
         <div>
           <Header />
         </div>
