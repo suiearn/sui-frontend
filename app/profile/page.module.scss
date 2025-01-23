@@ -1,0 +1,232 @@
+$font: "Inter", serif;
+.profile_image {
+  margin-top: -35px;
+}
+.profile_info_container {
+  //   margin-bottom: 30px;
+  border-bottom: 1px solid #eaecf0;
+  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .profile_name {
+    display: flex;
+    align-items: center;
+
+    .name {
+      font-family: "Inter", serif;
+      > h3 {
+        font-family: "Inter", serif;
+        font-size: 30px;
+        font-weight: 500;
+        color: #101828;
+      }
+      > h4 {
+        font-family: "Inter", serif;
+        font-size: 18px;
+        color: #667085;
+      }
+    }
+  }
+
+  .profile_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+.about {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 30px;
+  padding-bottom: 35px;
+  border-bottom: 1px solid #eaecf0;
+  > h4 {
+    color: #101828;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .about_info {
+    max-width: 904px;
+    > p {
+      font-size: 16px;
+      font-weight: 400;
+      color: #667085;
+      font-family: "Inter", serif;
+    }
+  }
+
+  .social_icons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+  .awards {
+    height: 98px;
+    width: 427px;
+    padding: 20px 24px;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-top: 30px;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+
+      > h4 {
+        font-size: 20px;
+        color: #344054;
+        font-family: $font;
+        font-weight: 700;
+      }
+      > h5 {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font;
+        color: #667085;
+      }
+    }
+  }
+}
+
+.proof {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 35px;
+
+  > h4 {
+    color: #101828;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  .proof_projects {
+    display: flex;
+    float: left;
+    width: 904px;
+
+    .tabs_container {
+      display: flex;
+      justify-content: center;
+      .tabs {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border-radius: 50px;
+        height: 60px;
+        padding-right: 10px;
+        padding-left: 10px;
+
+        .tabs_content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 40px;
+          > p {
+            color: #667085;
+            font-size: 16px;
+            cursor: pointer;
+          }
+          .chosenTab {
+            background-color: #eff8ff;
+            border-radius: 100px;
+            padding: 10px 20px;
+            color: #000000;
+            font-weight: 500;
+
+            &:first-child {
+              margin-left: 0px;
+            }
+            &:last-child {
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .project_body {
+    margin-top: 30px;
+    width: 441px;
+    display: flex;
+    flex-direction: column;
+
+    .submitted {
+      color: #000000;
+      font-weight: 500;
+      font-size: 14px;
+      margin-bottom: 5px;
+      > span {
+        color: #667085;
+        font-weight: 400;
+      }
+    }
+
+    .project_bottom {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+
+      > p {
+        color: #667085;
+        font-weight: 500;
+        font-size: 15px;
+      }
+      > .view {
+        margin-left: 10px;
+        font-size: 13px;
+        font-weight: 400;
+        color: #2e90fa;
+      }
+    }
+  }
+}
+
+.contact_button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffffff;
+  background-color: #2e90fa;
+  padding: 8px 18px;
+  border-radius: 8px;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: "Inter", serif;
+}
+
+.share_button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #344054;
+  background-color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 8px;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid #eaecf0;
+  font-family: "Inter", serif;
+}
+
+.ellipses {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #eaecf0;
+}
