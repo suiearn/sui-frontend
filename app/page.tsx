@@ -42,7 +42,6 @@ export default function Home() {
                 <p onClick={() => getTabsData("Others", 5)} className={activeTab === 5 ? `${styles.chosenTab}` : "mr-[10px]"}>Others</p>
               </div>
             </div>
-
           </div>
           <div className={styles.small_tabs}>
             <div className={styles.small_tabs_content}>

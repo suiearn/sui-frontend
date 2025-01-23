@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './login.module.scss'
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 const Login = ({closeModal}) => {
+    const router = useRouter()
     return (
         <div className={styles.login} onClick={closeModal}>
             <div className={styles.login__login_container} onClick={(e) => e.stopPropagation()}>
@@ -28,7 +30,7 @@ const Login = ({closeModal}) => {
                         </div>
                     </form>
                     <div className={styles.forgot}>Forgot password?</div>
-                    <button className={styles.signin_button}>Sign in</button>
+                    <button className={styles.signin_button} onClick={() => router.replace('/profile')}>Sign in</button>
                     <p className={styles.terms}>
                         By using this website, you agree to our <span>Terms of Use{" "}</span>
                         and our <span>Privacy Policy.</span>
