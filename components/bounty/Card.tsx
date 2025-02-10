@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export default function PrizeCard() {
+export default function PrizeCard({setShowModal}) {
   return (
     <Card className="w-full max-w-sm mx-auto overflow-hidden rounded-3xl">
       <CardHeader className="p-6">
@@ -54,17 +54,17 @@ export default function PrizeCard() {
       <CardContent className="bg-gray-50 p-6 space-y-6">
         <div className="flex items-center gap-2">
           <Briefcase className="w-5 h-5 text-[#2E90FA]" />
-          <span className="text-3xl font-semibold">10</span>
+          <span className="text-3xl font-semibold">0</span>
           <span className="text-lg text-[#667085]">Submission</span>
         </div>
         <div className="flex items-center gap-2">
           <Clock className="w-5 h-5 text-[#2E90FA]" />
-          <span className="text-3xl font-semibold">26d:9h:57m</span>
+          <span className="text-3xl font-semibold">5d:9h:57m</span>
           <span className="text-lg text-[#667085]">Remaining</span>
         </div>
       </CardContent>
       <CardFooter className="p-6">
-        <Button className="w-full h-14 text-lg bg-[#2E90FA] hover:bg-[#2E90FA]/90 rounded-xl">
+        <Button onClick={()=> setShowModal(true)} className="w-full h-14 text-lg bg-[#2E90FA] hover:bg-[#2E90FA]/90 rounded-xl">
           <CheckCircle className="w-5 h-5 mr-2" />
           Submit Now
         </Button>

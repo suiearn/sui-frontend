@@ -108,9 +108,8 @@ const Projects = () => {
                 </div>
                 <div className={styles.project_description}>
                     <h3>About the bounty</h3>
-                    <p>Gelato is an enterprise-grade Rollup as a Service Platform that helps you Build scalable, blazing-fast, custom enterprise-grade Rollups with Gelato`&apos;`s powerful Native Web3 Modules. Today, over 50 projects rely on our Rollup Platform processing over 4.5M daily txs & securing over $600M in TVL. We are proud to build with amazing teams such as Kraken’s Ink, Fox News, Reya, Lisk & Open Campus to bring millions of users onchain.</p>
-                    <p>Our team is incredibly passionate and dedicated to bridging the gap between what blockchain currently is and what it has the potential to be. We are committed to fostering a work environment that encourages innovation, new ideas, collaboration, research, and in-depth discussions.</p>
-                    <p>We are ramping up at Gelato, and are looking for a hungry, enthusiastic Talent Acquisition Specialist who can help us grow.</p>
+                    <p>Create an insightful Twitter thread (at least 7 tweets) explaining the Sui Network. Cover its unique consensus mechanism, scalability, use cases, and why it's 
+                        a game-changer in Web3. Use simple, engaging language and visuals if possible.</p>
                 </div>
             </div>
         </div>
