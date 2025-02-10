@@ -4,6 +4,7 @@ import styles from './navbar.module.scss'
 import Image from 'next/image';
 import SignUp from '../SignUp/SignUp';
 import Login from '../Login/Login';
+import Link from 'next/link';
 
 const Navbar = () => {
     const [showLoginModal, setShowLoginModal] = useState(false);
@@ -20,8 +21,12 @@ const Navbar = () => {
                         <Image src='/sui-earn-logo.svg' alt="suiearn logo" width={118} height={32} />
                     </div>
                     <div className={styles.links}>
-                        <p>Home</p>
-                        <p>Bounties</p>
+                        <Link href={"/"}>
+                            <p>Home</p>
+                        </Link>
+                        <Link href={"/bounty"}>
+                            <p>Bounties</p>
+                        </Link>
                         <p>Jobs</p>
                         <p>Learn Sui</p>
                     </div>
@@ -35,10 +40,17 @@ const Navbar = () => {
                 </div> */}
             </div>
             {showLoginModal && (
-                <Login closeModal={closeModal} />
+                <Login
+                    closeModal={closeModal}
+                    setShowSignUpModal={setShowSignUpModal}
+                    setShowLoginModal={setShowLoginModal}
+                />
             )}
             {showSignUpModal && (
-                <SignUp closeModal={closeModal} />
+                <SignUp closeModal={closeModal}
+                    setShowSignUpModal={setShowSignUpModal}
+                    setShowLoginModal={setShowLoginModal}
+                />
             )}
         </>
     )

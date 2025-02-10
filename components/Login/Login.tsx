@@ -2,9 +2,30 @@ import React from 'react';
 import styles from './login.module.scss'
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
+import { login } from '@/lib/api/collection/auth';
 
-const Login = ({closeModal}) => {
-    const router = useRouter()
+const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
+    const { register,
+        handleSubmit,
+        formState: { errors }
+    } = useForm()
+    const router = useRouter();
+    const onSubmit = async (data) => {
+
+        const mainData = {
+            "email": data.email,
+            "password": data.password
+        };
+
+        const response = await login(mainData);
+        if (response.statusCode === 201 || response.statusCode === 200) {
+            console.log(response.message)
+        }
+        else {
+            console.log(response.message)
+        }
+    };
     return (
         <div className={`relative ${styles.login}`} onClick={closeModal}>
             <div className={styles.login__login_container} onClick={(e) => e.stopPropagation()}>
@@ -14,24 +35,62 @@ const Login = ({closeModal}) => {
                 </div>
                 <div className={styles.header}>
                     <h3>You are one step away </h3>
-                    <h4>Don’t have an account?{" "}<span>Sign up</span></h4>
+                    <h4 onClick={() => { setShowLoginModal(false); setShowSignUpModal(true) }}>Don’t have an account?{" "}<span>Sign up</span></h4>
                 </div>
                 <div className={styles.google_btn}>
                     <Image src="/google-icon.svg" width={24} height={24} alt="continue with google" />
                     <p>Continue with Google</p>
                 </div>
                 <div className={styles.main}>
-                    <form>
+                    <form onSubmit={handleSubmit(onSubmit)}>
                         <div>
-                            <input type='text' placeholder='Enter your email' />
+                            <input
+                                id="business-email"
+                                className={errors.email ? "form-error" : ""}
+                                placeholder="Enter your email"
+                                {...register("email", {
+                                    required: "Enter your email",
+                                    pattern: {
+                                        value:
+                                            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                                        message: "Enter a valid email",
+                                    },
+                                })}
+                            />
+                            {errors.email && (
+                                <p className="form-error">{`${errors.email.message}`}</p>
+                            )}
                         </div>
                         <div className={styles.password}>
-                            <input type='text' placeholder='••••••••' />
-                            <Image className={styles.reveal} src="/reveal-password.svg" alt="reveal/hide password" width={13} height={9} />
+                            <input
+                                id="password"
+                                className={errors.password ? "form-error" : ""}
+                                type="password"
+                                placeholder="••••••••••"
+                                {...register("password", {
+                                    required: "Choose a password",
+                                    minLength: {
+                                        value: 8,
+                                        message:
+                                            "Password must contain at least 8 characters",
+                                    },
+                                    pattern: {
+                                        value:
+                                            /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{4,}$/,
+                                        message:
+                                            "Password must contain at least one uppercase letter, one lowercase letter, one number and one special character",
+                                    },
+                                })}
+                            />
+                            {errors.password && (
+                                <p className="form-error w-[352px]">{`${errors.password.message}`}</p>
+                            )}
+                            {/* <Image className={styles.reveal} src="/reveal-password.svg" alt="reveal/hide password" width={13} height={9} /> */}
                         </div>
+                        <button className={styles.signin_button} type="submit">Sign in</button>
                     </form>
-                    <div className={styles.forgot}>Forgot password?</div>
-                    <button className={styles.signin_button} onClick={() => router.replace('/profile')}>Sign in</button>
+                    {/* <div className={styles.forgot}>Forgot password?</div> */}
+                    
                     <p className={styles.terms}>
                         By using this website, you agree to our <span>Terms of Use{" "}</span>
                         and our <span>Privacy Policy.</span>

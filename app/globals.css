@@ -25,6 +25,12 @@ body {
   padding-right: 132px;
 }
 
+p.form-error {
+  margin-top: 4px !important;
+  color: #d60000 !important;
+  font-size: 12px !important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
