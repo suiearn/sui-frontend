@@ -91,18 +91,18 @@ export const ToastProvider = ({ children }) => {
               <path
                 d="M13 13L3 3"
                 stroke="#425466"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
               <path
                 d="M13 3L3 13"
                 stroke="#425466"
-                stroke-width="2"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </div>

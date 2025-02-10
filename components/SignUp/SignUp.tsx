@@ -22,7 +22,7 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
             "password": data.password,
         })
 
-        if (response.statusCode === 201 || response.statusCode === 200) {
+        if (response.status === true) {
             showToast("success", response.message);
             setShowSignUpModal(false)
             router.push('/')
