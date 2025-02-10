@@ -3,11 +3,11 @@
   justify-content: space-between;
   height: 80px;
   align-items: center;
-  border-bottom: 1px solid #eaecf0;
+  border-bottom: 1px solid #EAECF0;
   padding-left: 100px;
   padding-right: 100px;
   // border: 1px solid red;
-
+  
   &__navlinks {
     display: flex;
     align-items: center;
@@ -26,60 +26,16 @@
     }
   }
 
-  &__nav_buttons {
+  &__nav_buttons{
     display: flex;
     align-items: center;
     gap: 25px;
     padding: 0 32px;
-    > div {
-      font-size: 16px;
-      font-family: Inter;
-      color: #667085;
-      cursor: pointer;
+    >div{
+        font-size: 16px;
+        font-family: Inter;
+        color: #667085;
+        cursor: pointer;
     }
   }
-
-  .ellipses{
-    display: none;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    align-items: center;
-    border-bottom: 1px solid #eaecf0;
-    padding-left: 10px;
-    padding-right: 10px;
-
-    &__navlinks {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      padding: 0 32px;
-      // border: 1px solid black;\
-      .links {
-        display: none;
-        gap: 30px;
-        > p {
-          color: #667085;
-          font-size: 16px;
-          font-weight: 500;
-          cursor: pointer;
-        }
-      }
-    }
-
-    &__nav_buttons {
-      display: none;
-    }
-
-    .ellipses{
-      display: flex;
-    }
-  }
-}
-.mobile_nav {
 }

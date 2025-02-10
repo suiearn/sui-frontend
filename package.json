@@ -9,27 +9,20 @@
     "lint": "next lint"
   },
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
     "@radix-ui/react-slot": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.475.0",
-=======
-    "axios": "^1.7.9",
-    "js-cookie": "^3.0.5",
->>>>>>> fd7156971e631ea62bfb4378197267a31659263a
-=======
->>>>>>> parent of b0172f1 (chnages)
     "next": "15.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sass": "^1.83.1",
-    "sass-loader": "^16.0.4"
+    "sass-loader": "^16.0.4",
+    "tailwind-merge": "^3.0.1",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
