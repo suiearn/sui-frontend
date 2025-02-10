@@ -27,8 +27,10 @@ const Navbar = () => {
                         <Link href={"/bounty"}>
                             <p>Bounties</p>
                         </Link>
-                        <p>Jobs</p>
-                        <p>Learn Sui</p>
+                        {/* <p>Jobs</p> */}
+                        <Link href="https://sui.io/intro-to-sui" target='_blank'>
+                            <p>Learn Sui</p>
+                        </Link>
                     </div>
                 </div>
                 <div className={styles.navbar__nav_buttons}>

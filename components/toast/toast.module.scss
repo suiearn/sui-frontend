@@ -1,0 +1,71 @@
+.container {
+  --toastify-color-info: #0052b4;
+  --toastify-color-success: #39c478;
+  --toastify-color-warning: #f9c819;
+  --toastify-color-error: #d60000;
+
+  display: none;
+  padding: 16px 16px 8px 16px;
+  border-radius: 6px;
+  background: #fcfcfc;
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  width: 343px;
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  box-sizing: border-box;
+  z-index: 9999;
+  color: #425466;
+  border: 1px solid #eaecf0;
+  transform: translateX(110%);
+  font-size: 14px;
+  .top {
+    display: flex;
+    margin-bottom: 12px;
+    justify-content: space-between;
+    .top_left {
+      display: flex;
+    }
+
+    .message {
+      padding: 0 8px;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .progress_bar {
+    width: 0%;
+    border-radius: 6px;
+    height: 10px;
+  }
+
+  .progress_bar.success {
+    background-color: var(--toastify-color-success);
+  }
+
+  .progress_bar.info {
+    background-color: var(--toastify-color-info);
+  }
+
+  .progress_bar.warn {
+    background-color: var(--toastify-color-warning);
+  }
+
+  .progress_bar.error {
+    background-color: var(--toastify-color-error);
+  }
+
+  @media only screen and (max-width: 480px) {
+    width: 100vw;
+    padding: 10px 8px 6px 10px;
+    box-shadow: none;
+    border-radius: 0;
+    top: 0;
+    right: 0;
+
+    .progress_bar {
+      height: 8px;
+    }
+  }
+}

@@ -4,6 +4,7 @@ import "./globals.css";
 import '@/app/styles/button.scss'
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
+import { ToastProvider } from "@/components/toast/ToastContext";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -25,9 +26,11 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ToastProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ToastProvider>
       </body>
     </html>
   );

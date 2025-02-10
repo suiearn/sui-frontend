@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { login } from '@/lib/api/collection/auth';
+import { useToast } from '../toast/ToastContext';
 
 const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
     const { register,
@@ -11,6 +12,8 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
         formState: { errors }
     } = useForm()
     const router = useRouter();
+  const { showToast } = useToast();
+
     const onSubmit = async (data) => {
 
         const mainData = {
@@ -20,10 +23,12 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
 
         const response = await login(mainData);
         if (response.statusCode === 201 || response.statusCode === 200) {
-            console.log(response.message)
+            showToast("success", response.message);
+            setShowLoginModal(false)
+            router.push("/profile")
         }
         else {
-            console.log(response.message)
+            showToast("success", response.message)
         }
     };
     return (
@@ -37,10 +42,10 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
                     <h3>You are one step away </h3>
                     <h4 onClick={() => { setShowLoginModal(false); setShowSignUpModal(true) }}>Don’t have an account?{" "}<span>Sign up</span></h4>
                 </div>
-                <div className={styles.google_btn}>
+                {/* <div className={styles.google_btn}>
                     <Image src="/google-icon.svg" width={24} height={24} alt="continue with google" />
                     <p>Continue with Google</p>
-                </div>
+                </div> */}
                 <div className={styles.main}>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div>

@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styles from '../Login/login.module.scss'
 import Image from 'next/image';
 import { useForm } from 'react-hook-form'
 import { signUp } from '@/lib/api/collection/auth';
+import { useToast } from "@/components/toast/ToastContext";
+import { useRouter } from 'next/navigation';
 
 const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
-    const [passwordVisibility, togglePasswordVisibility] = useState(false);
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const { showToast } = useToast();
+    const router = useRouter()
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const onSignUp = async (data: any) => {
@@ -20,10 +23,12 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
         })
 
         if (response.statusCode === 201 || response.statusCode === 200) {
-            console.log(response.message)
+            showToast("success", response.message);
+            setShowSignUpModal(false)
+            router.push('/')
         }
         else {
-            console.log(response.message)
+            showToast("error", response.message);
         }
     }
     return (
@@ -120,7 +125,6 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
                             {errors.password && (
                                 <p className="form-error w-[352px]">{`${errors.password.message}`}</p>
                             )}
-                            {/* <Image className={styles.reveal} onClick={() => togglePasswordVisibility(!passwordVisibility)} src="/reveal-password.svg" alt="reveal/hide password" width={13} height={9} /> */}
                         </div>
                         {/* <div className={styles.password}>
                             <input type='text' placeholder='••••••••' />
