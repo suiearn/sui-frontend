@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { X } from "lucide-react"
 import { submitBounty } from "@/lib/api/collection/bounty"
+import { useToast } from "@/hooks/use-toast"
 // import { useToast } from "@/components/ui/use-toast"
 
 interface SubmissionModalProps {
@@ -21,7 +22,7 @@ export function SubmissionModal({ isOpen, onClose }: SubmissionModalProps) {
   const [additionalInfo, setAdditionalInfo] = useState("")
   const [walletAddress, setWalletAddress] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-//   const { toast } = useToast()
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

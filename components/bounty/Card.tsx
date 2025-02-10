@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export default function PrizeCard({setShowModal}) {
+export default function PrizeCard({setShowModal}:any) {
   return (
     <Card className="w-full max-w-sm mx-auto overflow-hidden rounded-3xl">
       <CardHeader className="p-6">
@@ -19,8 +19,8 @@ export default function PrizeCard({setShowModal}) {
             className="rounded-full"
           />
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-semibold">100</span>
-            <span className="text-4xl font-semibold text-[#2E90FA]">SOL</span>
+            <span className="text-4xl font-semibold">35</span>
+            <span className="text-4xl font-semibold text-[#2E90FA]">SUI</span>
             <span className="text-xl text-[#667085]">Total Prizes</span>
           </div>
         </div>
@@ -28,24 +28,24 @@ export default function PrizeCard({setShowModal}) {
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">50</span>
-              <span className="text-2xl font-medium text-[#2E90FA]">SOL</span>
+              <span className="text-2xl font-medium">15</span>
+              <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">1st</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">30</span>
-              <span className="text-2xl font-medium text-[#2E90FA]">SOL</span>
+              <span className="text-2xl font-medium">10</span>
+              <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">2nd</span>
             </div>
           </div>
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">20</span>
-              <span className="text-2xl font-medium text-[#2E90FA]">SOL</span>
+              <span className="text-2xl font-medium">5</span>
+              <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">3rd</span>
             </div>
           </div>
