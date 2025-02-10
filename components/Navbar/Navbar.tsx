@@ -14,7 +14,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <div className={`${styles.navbar}`}>
+            <div className={styles.navbar}>
                 <div className={styles.navbar__navlinks}>
                     <div className={styles.logo}>
                         <Image src='/sui-earn-logo.svg' alt="suiearn logo" width={118} height={32} />
@@ -40,9 +40,6 @@ const Navbar = () => {
             {showSignUpModal && (
                 <SignUp closeModal={closeModal} />
             )}
-            <div className={styles.mobile_nav}>
-
-            </div>
         </>
     )
 }

@@ -51,9 +51,7 @@ const Projects = () => {
                     <div className={styles.project_details_inner}>
                         <div className={styles.info}>
                             <div className='flex gap-3'>
-                                <div className={styles.project_logo}>
-                                <Image src='/project_logo.svg' alt='project logo' className='' color='white' width={0} height={0} />
-                                </div>                              
+                                <Image src='/project_logo.svg' alt='project logo' color='white' width={57} height={57} />
                                 <div className={styles.name}>
                                     <h2>Talent Acquisition Specialist Web3</h2>
                                     <h3>by Gelato Network</h3>

@@ -27,7 +27,6 @@ const page = () => {
           <div className={styles.profile_name}>
             <div className={styles.profile_image}>
               <Image src={"/profile-image.svg"} alt="profile image" width={130} height={130} />
-              <Image className={styles.check} src="/verified.svg" alt="verified" width={26} height={26}/>
             </div>
             <div className={styles.name}>
               <h3>Hannah Pedro</h3>
@@ -70,15 +69,15 @@ const page = () => {
             </div>
             <div className={styles.awards}>
               <div className={styles.info}>
-                <h4>💰$14</h4>
+                <h4>$14</h4>
                 <h5>Earned</h5>
               </div>
               <div className={styles.info}>
-                <h4>🏆{" "}6</h4>
+                <h4>6</h4>
                 <h5>Submission</h5>
               </div>
               <div className={styles.info}>
-                <h4>🎉{" "}2</h4>
+                <h4>2</h4>
                 <h5>Won</h5>
               </div>
             </div>

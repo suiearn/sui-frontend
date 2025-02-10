@@ -14,7 +14,7 @@ const Header = () => {
         </div>
       </div>
       <div>
-        <Image src='/header-image.svg' alt="header-image" className='w-full h-full' width={0} height={0} />
+        <Image src='/header-image.svg' alt="header-image" className='w-full h-full' width={576} height={100} />
       </div>
     </div>
   )
