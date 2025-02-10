@@ -1,9 +1,26 @@
-import React from 'react'
+'use client'
+import React, { useEffect } from 'react'
 import styles from './bounty.module.scss'
 import Image from 'next/image'
 import PrizeCard from './Card'
+import { getBountyByID } from '@/lib/api/collection/bounty'
 
 const Bounty = () => {
+
+    //  const fetchData = async () => {
+    //     try {
+    //       const response = await getBountyByID();
+
+    //     } catch (error) {
+    //       console.error("Error fetching data:", error);
+    //     }
+    //   };
+
+    //   useEffect(() => {
+    //     fetchData(); 
+    //   }, []);
+
+
   return (
     <div className={styles.bounty}>
        <Image height={230} width={1440} src="/suiimage.svg" alt=""/>

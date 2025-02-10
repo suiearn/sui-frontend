@@ -1,9 +1,25 @@
-import React from 'react';
+'use client'
+import React, { useEffect } from 'react';
 import styles from './projects.module.scss'
 import Image from 'next/image';
 import { projects } from '@/app/utils/data';
+import { getBountys } from '@/lib/api/collection/bounty';
 
 const Projects = () => {
+
+    //  const fetchData = async () => {
+    //         try {
+    //           const response = await getBountys();
+    
+    //         } catch (error) {
+    //           console.error("Error fetching data:", error);
+    //         }
+    //       };
+    
+    //       useEffect(() => {
+    //         fetchData(); 
+    //       }, []);
+
     return (
         <div className={styles.project}>
             <div className={styles.left}>
