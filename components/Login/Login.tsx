@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { login } from '@/lib/api/collection/auth';
 import { useToast } from '../toast/ToastContext';
+import { useAppDispatch } from "@/lib/redux-store/store";
+import { loginSuccess } from '@/lib/redux-store/auth/authSlice';
 
 const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
     const { register,
@@ -12,7 +14,8 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
         formState: { errors }
     } = useForm()
     const router = useRouter();
-  const { showToast } = useToast();
+    const dispatch = useAppDispatch()
+    const { showToast } = useToast();
 
     const onSubmit = async (data) => {
 
@@ -22,13 +25,21 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
         };
 
         const response = await login(mainData);
-        if (response.statusCode === 201 || response.statusCode === 200) {
-            showToast("success", response.message);
-            setShowLoginModal(false)
-            router.push("/profile")
+        if (response.status === true) {
+            showToast("success", response.data.message);
+            console.log(response)
+            closeModal()
+            dispatch(loginSuccess({
+                isAuthenticated: true, //yes
+                token: response.data.token, //yes
+                userId: response.data.user._id, //yes
+                username: response.data.user.userName, //yes
+                email: response.data.user.email,
+            }))
+            // router.push("/profile")
         }
         else {
-            showToast("success", response.message)
+            showToast("error", response.message)
         }
     };
     return (
@@ -95,7 +106,7 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
                         <button className={styles.signin_button} type="submit">Sign in</button>
                     </form>
                     {/* <div className={styles.forgot}>Forgot password?</div> */}
-                    
+
                     <p className={styles.terms}>
                         By using this website, you agree to our <span>Terms of Use{" "}</span>
                         and our <span>Privacy Policy.</span>

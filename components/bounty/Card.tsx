@@ -11,13 +11,13 @@ export default function PrizeCard({setShowModal}:any) {
       <CardHeader className="p-6">
         <h2 className="text-xl text-[#667085] mb-4">Prize</h2>
         <div className="flex items-center gap-3 mb-6">
-          <Image
-            src=""
+          {/* <Image
+            src="d"
             alt="SOL Token"
             width={48}
             height={48}
             className="rounded-full"
-          />
+          /> */}
           <div className="flex items-baseline gap-2">
             <span className="text-4xl font-semibold">35</span>
             <span className="text-4xl font-semibold text-[#2E90FA]">SUI</span>
