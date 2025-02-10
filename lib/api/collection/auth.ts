@@ -2,11 +2,11 @@ import apiClient from "../client";
 import { customError } from "../client";
 
 
-export const signUp = async (data) => {
+export const signUp = async (data:any) => {
   try {
     const response = await apiClient.post("auth/signup", data);
     return response.data;
-  } catch (error) {
+  } catch (error:any) {
     const errorCode = error.response?.data?.statusCode;
     const message = error.response?.data?.message;
     return customError(
@@ -16,11 +16,11 @@ export const signUp = async (data) => {
   }
 };
 
-export const login = async (data) => {
+export const login = async (data:any) => {
   try {
     const response = await apiClient.post("auth/login", data);
     return response.data;
-  } catch (error) {
+  } catch (error:any) {
     const errorCode = error.response?.data?.statusCode;
     const message = error.response?.data?.message;
     return customError(

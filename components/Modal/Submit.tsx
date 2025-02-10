@@ -8,8 +8,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { X } from "lucide-react"
 import { submitBounty } from "@/lib/api/collection/bounty"
-import { useToast } from "@/hooks/use-toast"
-// import { useToast } from "@/components/ui/use-toast"
+
+import { useSelector } from "react-redux"
+import { useToast } from "../toast/ToastContext"
+
 
 interface SubmissionModalProps {
   isOpen: boolean
@@ -22,7 +24,8 @@ export function SubmissionModal({ isOpen, onClose }: SubmissionModalProps) {
   const [additionalInfo, setAdditionalInfo] = useState("")
   const [walletAddress, setWalletAddress] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const { toast } = useToast()
+  const { showToast } = useToast()
+  const {userId} = useSelector((state:any)=> state.auth)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -31,27 +34,20 @@ export function SubmissionModal({ isOpen, onClose }: SubmissionModalProps) {
     const formData = {
         "solution": submissionLink,
         "wallet": walletAddress,
-        "userIds": ["67a1515c3a81395e144e81ab"]
+        "userIds": [userId]
     }
 
     try {
-      const response = await submitBounty('sjdjd', formData)
+      const response = await submitBounty('67aa22f18bdd5f89d039b76b', formData)
       if (response.ok) {
-        // toast({
-        //   title: "Submission Successful",
-        //   description: "Your bounty submission has been received.",
-        // })
+        showToast("success", response.data.message);
         onClose()
       } else {
         const errorData = await response.json()
         throw new Error(errorData.message || "Submission failed")
       }
-    } catch (error) {
-    //   toast({
-    //     title: "Submission Failed",
-    //     description: error instanceof Error ? error.message : "An unexpected error occurred",
-    //     variant: "destructive",
-    //   })
+    } catch (error:any) {
+        showToast("error", error.data.message);
     } finally {
       setIsSubmitting(false)
     }
