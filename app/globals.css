@@ -6,11 +6,26 @@
 @tailwind components;
 @tailwind utilities;
 
+<<<<<<< HEAD
+=======
+:root {
+  --background: #F9F8F4;
+  --foreground: #171717;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+>>>>>>> fd7156971e631ea62bfb4378197267a31659263a
 body {
   color: #000;
   background: #fff;
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: 100%!important;
 }
 
 * {
@@ -25,6 +40,7 @@ body {
   padding-right: 132px;
 }
 
+<<<<<<< HEAD
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -87,5 +103,11 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+=======
+@media screen and (max-width: 768px) {
+  .app_container{
+    padding-left: 10px;
+    padding-right: 10px;
+>>>>>>> fd7156971e631ea62bfb4378197267a31659263a
   }
 }

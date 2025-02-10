@@ -14,7 +14,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <div className={styles.navbar}>
+            <div className={`${styles.navbar}`}>
                 <div className={styles.navbar__navlinks}>
                     <div className={styles.logo}>
                         <Image src='/sui-earn-logo.svg' alt="suiearn logo" width={118} height={32} />
@@ -30,6 +30,9 @@ const Navbar = () => {
                     <div onClick={() => setShowLoginModal(true)}>Log in</div>
                     <button onClick={() => setShowSignUpModal(true)} className='btn primary small-btn'>Sign up</button>
                 </div>
+                <div className={styles.ellipses}>
+                    <Image src='/navbar-ellipses.svg' alt="navbar menu" width={40} height={40} />
+                </div>
             </div>
             {showLoginModal && (
                 <Login closeModal={closeModal} />
@@ -37,6 +40,9 @@ const Navbar = () => {
             {showSignUpModal && (
                 <SignUp closeModal={closeModal} />
             )}
+            <div className={styles.mobile_nav}>
+
+            </div>
         </>
     )
 }
