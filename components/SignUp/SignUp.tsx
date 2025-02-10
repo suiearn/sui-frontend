@@ -6,8 +6,9 @@ const SignUp = ({ closeModal }) => {
     return (
         <div className={styles.login} onClick={closeModal}>
             <div className={styles.login__login_container} onClick={(e) => e.stopPropagation()}>
-                <div className='flex justify-center'>
+                <div className='flex justify-center relative'>
                     <Image src="/sui-single-logo.svg" width={34} height={43} alt="logo" />
+                    <Image src="/close-icon.svg" alt="close" width={10} height={10} className='absolute right-0 top-0' onClick={closeModal} />
                 </div>
                 <div className={styles.header}>
                     <h3>You are one step away </h3>

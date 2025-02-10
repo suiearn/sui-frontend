@@ -27,12 +27,12 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className={styles.navbar__nav_buttons}>
-                    <div onClick={() => setShowLoginModal(true)}>Log in</div>
+                    <div onClick={() => setShowLoginModal(true)} className='whitespace-nowrap'>Log in</div>
                     <button onClick={() => setShowSignUpModal(true)} className='btn primary small-btn'>Sign up</button>
                 </div>
-                <div className={styles.ellipses}>
+                {/* <div className={styles.ellipses}>
                     <Image src='/navbar-ellipses.svg' alt="navbar menu" width={40} height={40} />
-                </div>
+                </div> */}
             </div>
             {showLoginModal && (
                 <Login closeModal={closeModal} />
