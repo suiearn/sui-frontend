@@ -1,9 +1,9 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './bounty.module.scss'
 import Image from 'next/image'
 import PrizeCard from './Card'
-import { getBountyByID } from '@/lib/api/collection/bounty'
+// import { getBountyByID } from '@/lib/api/collection/bounty'
 import { SubmissionModal } from '../Modal/Submit'
 
 const Bounty = () => {

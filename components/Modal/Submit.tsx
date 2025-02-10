@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useState } from "react"
@@ -6,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { X } from "lucide-react"
+// import { X } from "lucide-react"
 import { submitBounty } from "@/lib/api/collection/bounty"
 
 import { useSelector } from "react-redux"
@@ -63,7 +64,7 @@ export function SubmissionModal({ isOpen, onClose }: SubmissionModalProps) {
               <X className="h-4 w-4" />
             </Button> */}
           </div>
-          <p className="text-sm text-muted-foreground">We can't wait to see what you've created!</p>
+          <p className="text-sm text-muted-foreground">We can&apos;t wait to see what you&apos;ve created!</p>
         </DialogHeader>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -105,7 +106,7 @@ export function SubmissionModal({ isOpen, onClose }: SubmissionModalProps) {
               className="min-h-[60px]"
             />
             <p className="text-xs text-muted-foreground">
-              If you have any other links or information you'd like to share with us, please add them here!
+              If you have any other links or information you&apos;d like to share with us, please add them here!
             </p>
           </div>
 

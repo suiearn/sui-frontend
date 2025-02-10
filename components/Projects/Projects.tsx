@@ -1,9 +1,9 @@
 'use client'
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './projects.module.scss'
 import Image from 'next/image';
 import { projects } from '@/app/utils/data';
-import { getBountys } from '@/lib/api/collection/bounty';
+// import { getBountys } from '@/lib/api/collection/bounty';
 import { useRouter } from 'next/navigation';
 
 const Projects = () => {
@@ -110,7 +110,7 @@ const Projects = () => {
                 </div>
                 <div className={styles.project_description}>
                     <h3>About the bounty</h3>
-                    <p>Create an insightful Twitter thread (at least 7 tweets) explaining the Sui Network. Cover its unique consensus mechanism, scalability, use cases, and why it's 
+                    <p>Create an insightful Twitter thread (at least 7 tweets) explaining the Sui Network. Cover its unique consensus mechanism, scalability, use cases, and why it&apos;s 
                         a game-changer in Web3. Use simple, engaging language and visuals if possible.</p>
                 </div>
             </div>

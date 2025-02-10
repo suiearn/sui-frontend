@@ -1,23 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import styles from './login.module.scss'
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { login } from '@/lib/api/collection/auth';
 import { useToast } from '../toast/ToastContext';
 import { useAppDispatch } from "@/lib/redux-store/store";
 import { loginSuccess } from '@/lib/redux-store/auth/authSlice';
 
-const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
+const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }: any) => {
     const { register,
         handleSubmit,
         formState: { errors }
     } = useForm()
-    const router = useRouter();
     const dispatch = useAppDispatch()
     const { showToast } = useToast();
 
-    const onSubmit = async (data) => {
+    const onSubmit = async (data:any) => {
 
         const mainData = {
             "email": data.email,

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import styles from '../Login/login.module.scss'
 import Image from 'next/image';
@@ -6,7 +7,7 @@ import { signUp } from '@/lib/api/collection/auth';
 import { useToast } from "@/components/toast/ToastContext";
 import { useRouter } from 'next/navigation';
 
-const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }) => {
+const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }:any) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const { showToast } = useToast();
     const router = useRouter()
