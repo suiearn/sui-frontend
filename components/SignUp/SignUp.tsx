@@ -24,12 +24,12 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }:any) => {
         })
 
         if (response.status === true) {
-            showToast("success", response.message);
+            showToast("error", response.message);
             setShowSignUpModal(false)
             router.push('/')
         }
         else {
-            showToast("error", response.message);
+            showToast("success", response.message);
         }
     }
     return (
