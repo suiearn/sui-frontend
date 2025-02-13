@@ -90,7 +90,6 @@ const page = () => {
 
         <div className={`${styles.proof}`}>
           <h4>Proof</h4>
-
           <div className='flex flex-col'>
           <div className={styles.proof_projects}>
             <div className={styles.tabs_container}>
@@ -131,7 +130,7 @@ const page = () => {
               <Image src="/project2.svg" alt="project" width={439} height={328} />
               <div className={styles.project_bottom}>
                 <div>
-                  <Image src="/company-logo.svg" alt="" width={24} height={24} />
+                  <Image src="/company-logo.svg" alt="company-logo" width={24} height={24} />
                 </div>
                 <p>Talent Acquisition Specialist - Web3</p>
                 <p className={styles.view}>View Submission</p>
