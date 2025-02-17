@@ -2,7 +2,7 @@
   --primary: #2e90fa;
   --secondary: #7F56D9;
 
-  border-radius: 50px;
+  border-radius: 10px;
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -15,7 +15,7 @@
     background: var(--primary);
   }
   &.small-btn {
-    padding: 8px 16px;
+    padding: 10px 16px;
     font-size: 16px;
     white-space: nowrap;
   }

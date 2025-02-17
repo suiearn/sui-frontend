@@ -62,6 +62,7 @@ const page = () => {
             <div className={`${styles.about_info} space-y-4`}>
               <p>I&apos;m a Product Designer based in Melbourne, Australia. I specialise in UX/UI design, brand strategy, and Webflow development. I&apos;m always striving to grow and learn something new and I don&apos;t take myself too seriously.</p>
               <p>I&apos;m passionate about helping startups grow, improve their customer experience, and to raise venture capital through good design.</p>
+              
               <div className={styles.social_icons}>
                 <Image src='/twitter.svg' alt="twitter" width={24} height={24} />
                 <Image src='/linkedin.svg' alt="linkedin" width={24} height={24} />
@@ -102,13 +103,13 @@ const page = () => {
             </div>
           </div>
 
-          <div className='flex gap-6'>
+          <div className={styles.project_body_container}>
             <div className={styles.project_body}>
               <div className='flex justify-between'>
                 <p className={styles.submitted}>Hannah Pedro{" "}<span>submitted to a bounty</span></p>
                 <p className={styles.submitted}>1{" "}<span>Day</span></p>
               </div>
-              <Image src="/project1.svg" alt="project" width={439} height={328} />
+              <Image src="/project1.svg" alt="project" className="w-fit" width={0} height={328} />
               <div className={styles.project_bottom}>
                 <div>
                   <Image src="/company-logo.svg" alt="" width={24} height={24} />

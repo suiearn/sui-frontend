@@ -32,3 +32,41 @@
     gap: 12px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .header {
+    display: flex;
+  flex-direction: column!important;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    gap: 64px;
+    &__text {
+      width: 343px;
+      > h1 {
+        font-size: 36px;
+        line-height: 44px;
+        color: #101828;
+        font-weight: 700;
+        text-align: center;
+      }
+      > p {
+        color: #667085;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+      }
+    }
+    
+    &__button_cta {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      >button{
+        width: 100%;
+      }
+    }
+  }
+}
