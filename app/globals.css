@@ -10,7 +10,7 @@ body {
   color: #000;
   background: #F9F8F4;
   font-family: Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: 100%!important;
 }
 
 * {
@@ -93,5 +93,12 @@ p.form-error {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .app_container{
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

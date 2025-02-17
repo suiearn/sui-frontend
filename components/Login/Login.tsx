@@ -29,10 +29,10 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }: any) => {
             console.log(response)
             closeModal()
             dispatch(loginSuccess({
-                isAuthenticated: true, //yes
-                token: response.data.token, //yes
-                userId: response.data.user._id, //yes
-                username: response.data.user.userName, //yes
+                isAuthenticated: true,
+                token: response.data.token,
+                userId: response.data.user._id,
+                username: response.data.user.userName,
                 email: response.data.user.email,
             }))
             // router.push("/profile")
@@ -46,7 +46,7 @@ const Login = ({ closeModal, setShowLoginModal, setShowSignUpModal }: any) => {
             <div className={styles.login__login_container} onClick={(e) => e.stopPropagation()}>
                 <div className='flex justify-center relative'>
                     <Image src="/sui-single-logo.svg" width={34} height={43} alt="logo" />
-                    <Image src="/close-icon.svg" alt="close" width={10} height={10} className='absolute right-0 top-0' onClick={closeModal} />
+                    <Image src="/close-icon.svg" alt="close" width={15} height={15} className='absolute right-0 top-0' onClick={closeModal} />
                 </div>
                 <div className={styles.header}>
                     <h3>You are one step away </h3>
