@@ -2,7 +2,7 @@
 import apiClient from "../client";
 import { customError } from "../client";
 
-export const getBountyByID = async (id:string) => {
+export const getBountyByID = async (id:any) => {
     try {
       const response = await apiClient.get(`bounty/${id}`);
       return response.data;

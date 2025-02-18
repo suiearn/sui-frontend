@@ -1,20 +1,33 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import styles from '../Login/login.module.scss'
 import Image from 'next/image';
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 import { signUp } from '@/lib/api/collection/auth';
 import { useToast } from "@/components/toast/ToastContext";
 import { useRouter } from 'next/navigation';
 
-const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }:any) => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+interface dataState{
+    firstname: string
+    lastname: string
+    username: string
+    email: string
+    password: string
+}
+interface ModalProps {
+    closeModal: () => void;
+    setShowLoginModal: React.Dispatch<React.SetStateAction<boolean>>;
+    setShowSignUpModal: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }: ModalProps) => {
+    const { register, handleSubmit, formState: { errors } } = useForm<dataState>();
     const { showToast } = useToast();
     const router = useRouter()
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const onSignUp = async (data: any) => {
+    const onSignUp: SubmitHandler<dataState> = async (data) => {
         console.log(data)
+
         const response = await signUp({
             "firstName": data.firstname,
             "lastName": data.lastname,
@@ -32,6 +45,7 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }:any) => {
             showToast("success", response.message);
         }
     }
+
     return (
         <div className={styles.login} onClick={closeModal}>
             <div className={styles.login__login_container} onClick={(e) => e.stopPropagation()}>
@@ -88,7 +102,7 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }:any) => {
                         <div>
                             <input
                                 type='text'
-                                className={errors.businessName ? "form-error" : ""}
+                                className={errors.email ? "form-error" : ""}
                                 placeholder="Enter your email"
                                 {...register("email", {
                                     required: "Enter a valid email",

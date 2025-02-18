@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styles from './navbar.module.scss'
 import Image from 'next/image';
 import SignUp from '../SignUp/SignUp';
@@ -44,9 +44,9 @@ const Navbar = () => {
                         <Link href={"/"}>
                             <p>Home</p>
                         </Link>
-                        <Link href={"/bounty"}>
+                        {/* <Link href={"/bounty"}>
                             <p>Bounties</p>
-                        </Link>
+                        </Link> */}
                         {/* <p>Jobs</p> */}
                         <Link href="https://sui.io/intro-to-sui" target='_blank'>
                             <p>Learn Sui</p>

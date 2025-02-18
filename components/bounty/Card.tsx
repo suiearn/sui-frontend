@@ -5,7 +5,7 @@ import { Briefcase, Clock, CheckCircle } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export default function PrizeCard({setShowModal}:any) {
+export default function PrizeCard({setShowModal, setShowLoginModal, isAuthenticated}:any) {
   return (
     <Card className="w-full max-w-sm mx-auto overflow-hidden rounded-3xl">
       <CardHeader className="p-6">
@@ -64,7 +64,13 @@ export default function PrizeCard({setShowModal}:any) {
         </div>
       </CardContent>
       <CardFooter className="p-6">
-        <Button onClick={()=> setShowModal(true)} className="w-full h-14 text-lg bg-[#2E90FA] hover:bg-[#2E90FA]/90 rounded-xl">
+        <Button onClick={()=> {
+                    if(isAuthenticated){
+                        setShowModal(true)
+                    }else{
+                        setShowLoginModal(true)
+                    }
+                    }} className="w-full h-14 text-lg bg-[#2E90FA] hover:bg-[#2E90FA]/90 rounded-xl">
           <CheckCircle className="w-5 h-5 mr-2" />
           Submit Now
         </Button>
