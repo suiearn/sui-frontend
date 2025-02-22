@@ -38,21 +38,21 @@ const page = () => {
             </div>
           </div>
           <div className={styles.profile_btn}>
-            <button className={styles.contact_button}>
+            {/* <button className={styles.contact_button}>
               <span><Image src='/mail.svg' width={20} height={20} alt="contact " /></span>
               Contact
-            </button>
-            <button className={styles.share_button}>
+            </button> */}
+            {/* <button className={styles.share_button}>
               <span><Image src='/share.svg' width={20} height={20} alt="contact " /></span>
               Share
-            </button>
-            <div className={styles.ellipses}>
+            </button> */}
+            {/* <div className={styles.ellipses}>
               <svg width="16" height="4" viewBox="0 0 16 4" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8.00016 2.83332C8.4604 2.83332 8.8335 2.46023 8.8335 1.99999C8.8335 1.53975 8.4604 1.16666 8.00016 1.16666C7.53993 1.16666 7.16683 1.53975 7.16683 1.99999C7.16683 2.46023 7.53993 2.83332 8.00016 2.83332Z" stroke="#344054" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M13.8335 2.83332C14.2937 2.83332 14.6668 2.46023 14.6668 1.99999C14.6668 1.53975 14.2937 1.16666 13.8335 1.16666C13.3733 1.16666 13.0002 1.53975 13.0002 1.99999C13.0002 2.46023 13.3733 2.83332 13.8335 2.83332Z" stroke="#344054" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M2.16683 2.83332C2.62707 2.83332 3.00016 2.46023 3.00016 1.99999C3.00016 1.53975 2.62707 1.16666 2.16683 1.16666C1.70659 1.16666 1.3335 1.53975 1.3335 1.99999C1.3335 2.46023 1.70659 2.83332 2.16683 2.83332Z" stroke="#344054" strokeWidth="1.66667" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -89,7 +89,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className={`${styles.proof}`}>
+        {/* <div className={`${styles.proof}`}>
           <h4>Proof</h4>
           <div className='flex flex-col'>
           <div className={styles.proof_projects}>
@@ -145,7 +145,7 @@ const page = () => {
           </div>
 
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

@@ -33,7 +33,7 @@ const Bounty = () => {
 
      const fetchData = async () => {
         try {
-          const response = await getBountyByID('67a26878b637a65afcfe7f9e');
+          const response = await getBountyByID('67b77246719356dc60e76295');
           console.log(response)
           setData(response.data)
         } catch (error) {
@@ -91,9 +91,8 @@ const Bounty = () => {
        <div className={styles.bounty__main}>
           <div className={styles.bounty__main__left}>
             <div> 
-                <h5>About Talent Acquisition Specialist - Web3</h5>
-                <p>The Sui Network is redefining blockchain scalability and efficiency. Your task is to create an engaging and well-researched 
-                    Twitter thread (at least 7 tweets) explaining what makes Sui unique.  </p>
+                <h5>About {data?.title}</h5>
+                <p>{data?.about} </p>
             </div>
 
             {/* <div style={{marginTop: '49px'}}> 
@@ -111,19 +110,17 @@ const Bounty = () => {
 
             <div style={{marginTop: '49px'}}> 
                 <h5>Eligibility & Requirements: </h5>
-                <p>Your thread must be entirely original and not copied from existing materials. Plagiarism will result in disqualification.</p>
+                <p>{data?.eligibility}</p>
             </div>
 
             <div style={{marginTop: '49px'}}> 
                 <h5>How to Participate</h5>
-                <p>Make a Twitter trend by creating an engaging and informative thread about the Sui Network. Your thread should be well-structured, insightful, and easy to understand. Use visuals, key facts, and a strong call to action to drive engagement.
-                    Once posted, submit your Twitter thread link as a reply to this bounty. The best submissions will be reviewed and rewarded based on clarity, accuracy, and engagement.
-                    Start writing and make it trend! 🔥 #SuiNetwork #Web3 #Crypto</p>
+                <p>{data?.procedure}</p>
             </div>  
            </div>
 
            <div className={styles.bounty__main__right}>
-            <PrizeCard setShowModal={setShowModal} setShowLoginModal={setShowLoginModal} isAuthenticated={isAuthenticated}/>
+            <PrizeCard data={data} setShowModal={setShowModal} setShowLoginModal={setShowLoginModal} isAuthenticated={isAuthenticated}/>
            </div>
        </div>
     </div>
