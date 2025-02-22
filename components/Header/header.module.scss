@@ -31,6 +31,12 @@
     justify-content: flex-start;
     gap: 12px;
   }
+
+  .header_image_container{
+    width: 576px;
+    height: 374px;
+    object-fit: contain;
+  }
 }
 
 @media screen and (max-width: 767px) {

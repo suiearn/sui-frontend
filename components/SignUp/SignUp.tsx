@@ -26,7 +26,7 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }: ModalProp
     const router = useRouter()
 
     const onSignUp: SubmitHandler<dataState> = async (data) => {
-        console.log(data)
+        // console.log(data)
 
         const response = await signUp({
             "firstName": data.firstname,
@@ -37,12 +37,12 @@ const SignUp = ({ closeModal, setShowLoginModal, setShowSignUpModal }: ModalProp
         })
 
         if (response.status === true) {
-            showToast("error", response.message);
+            showToast("success", response.message);
             setShowSignUpModal(false)
             router.push('/')
         }
         else {
-            showToast("success", response.message);
+            showToast("error", response.message);
         }
     }
 
