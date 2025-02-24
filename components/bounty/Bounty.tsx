@@ -12,7 +12,10 @@ import { useSelector } from 'react-redux'
 
 interface response {
     submissions: []
-    title: string
+    title: string 
+    about: string
+    eligibility: string
+    procedure: string
 }
 
 interface AuthState {
