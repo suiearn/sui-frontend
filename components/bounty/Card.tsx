@@ -5,7 +5,9 @@ import { Briefcase, Clock, CheckCircle } from "lucide-react"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
-export default function PrizeCard({setShowModal, setShowLoginModal, isAuthenticated}:any) {
+export default function PrizeCard({setShowModal, setShowLoginModal, isAuthenticated, data}:any) {
+
+  const total = Number(data?.reward.first) + Number(data?.reward.second) + Number(data?.reward.third)
   return (
     <Card className="w-full max-w-sm mx-auto overflow-hidden rounded-3xl">
       <CardHeader className="p-6">
@@ -19,7 +21,7 @@ export default function PrizeCard({setShowModal, setShowLoginModal, isAuthentica
             className="rounded-full"
           /> */}
           <div className="flex items-baseline gap-2">
-            <span className="text-4xl font-semibold">35</span>
+            <span className="text-4xl font-semibold">{total}</span>
             <span className="text-4xl font-semibold text-[#2E90FA]">SUI</span>
             <span className="text-xl text-[#667085]">Total Prizes</span>
           </div>
@@ -28,7 +30,7 @@ export default function PrizeCard({setShowModal, setShowLoginModal, isAuthentica
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">15</span>
+              <span className="text-2xl font-medium">{data?.reward?.first}</span>
               <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">1st</span>
             </div>
@@ -36,7 +38,7 @@ export default function PrizeCard({setShowModal, setShowLoginModal, isAuthentica
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">10</span>
+              <span className="text-2xl font-medium">{data?.reward?.second}</span>
               <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">2nd</span>
             </div>
@@ -44,7 +46,7 @@ export default function PrizeCard({setShowModal, setShowLoginModal, isAuthentica
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2E90FA]" />
             <div className="flex items-baseline gap-2">
-              <span className="text-2xl font-medium">5</span>
+              <span className="text-2xl font-medium">{data?.reward?.third}</span>
               <span className="text-2xl font-medium text-[#2E90FA]">SUI</span>
               <span className="text-lg text-[#667085]">3rd</span>
             </div>

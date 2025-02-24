@@ -93,12 +93,20 @@ $font: "Inter", serif;
   .about_info {
     width: 904px;
     max-width: 100%;
+    >div{
     > p {
       font-size: 16px;
       font-weight: 400;
       color: #667085;
       font-family: "Inter", serif;
     }
+  }
+  }
+
+  .edit_button{
+    position: absolute;
+    right: 132px;
+    bottom: 150px;
   }
 
   .social_icons {
