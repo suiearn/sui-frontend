@@ -103,7 +103,7 @@ const Projects = () => {
                                 <div>
                                     <Image src='/heart-rounded-white.svg' alt="like icon" width={26} height={26} />
                                 </div>
-                                <button className='btn primary small-btn' onClick={() => router.push('/bounty')}>Apply</button>
+                                <button className='btn primary small-btn' onClick={() => router.push('/bounty/67b77246719356dc60e76295')}>Apply</button>
                             </div>
                         </div>
                     </div>
